@@ -1,0 +1,243 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NeuroFade Design System - Neural Network Aesthetic */
+
+@layer base {
+  :root {
+    /* Core Neural Network Colors */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    
+    /* Neon Palette */
+    --neon-cyan: 180 100% 50%;
+    --neon-electric: 200 100% 60%;
+    --neon-purple: 280 100% 70%;
+    --neon-pink: 320 100% 70%;
+    --neon-green: 120 100% 50%;
+    
+    /* Neural Network Gradients */
+    --gradient-neural: linear-gradient(135deg, hsl(240 10% 3.9%), hsl(260 15% 8%), hsl(240 10% 3.9%));
+    --gradient-neon: linear-gradient(45deg, hsl(180 100% 50% / 0.1), hsl(280 100% 70% / 0.1), hsl(200 100% 60% / 0.1));
+    --gradient-data-flow: linear-gradient(180deg, transparent, hsl(180 100% 50% / 0.2), transparent);
+    
+    /* Atmospheric Effects */
+    --glow-cyan: 0 0 20px hsl(180 100% 50% / 0.5), 0 0 40px hsl(180 100% 50% / 0.3);
+    --glow-electric: 0 0 20px hsl(200 100% 60% / 0.5), 0 0 40px hsl(200 100% 60% / 0.3);
+    --glow-neural: 0 0 30px hsl(180 100% 50% / 0.2);
+    
+    /* Typography */
+    --font-neural: 'Orbitron', 'Monaco', 'Courier New', monospace;
+    --font-system: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Neural Theme Colors */
+    --primary: 180 100% 50%;
+    --primary-foreground: 240 10% 3.9%;
+
+    --secondary: 260 15% 8%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 15% 15%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 200 100% 60%;
+    --accent-foreground: 240 10% 3.9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 15% 15%;
+    --input: 240 15% 15%;
+    --ring: 180 100% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-system);
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  /* Neural Network Animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: var(--glow-cyan); }
+    50% { box-shadow: var(--glow-electric); }
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes matrix-fall {
+    0% { transform: translateY(-100vh); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+  }
+  
+  @keyframes neural-gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  @keyframes data-stream {
+    0% { transform: translateY(100%) scaleY(0); }
+    50% { transform: translateY(0%) scaleY(1); }
+    100% { transform: translateY(-100%) scaleY(0); }
+  }
+
+  /* Neural Network Effects */
+  .neural-gradient {
+    background: var(--gradient-neural);
+    background-size: 400% 400%;
+    animation: neural-gradient 8s ease infinite;
+  }
+  
+  .neon-glow {
+    text-shadow: var(--glow-cyan);
+    transition: all 0.3s ease;
+  }
+  
+  .neon-glow:hover {
+    text-shadow: var(--glow-electric);
+    transform: scale(1.05);
+  }
+  
+  .neural-typing {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid hsl(var(--primary));
+    animation: typing 3s steps(40) 1s forwards, blink-caret 1s step-end infinite;
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: hsl(var(--primary)); }
+  }
+  
+  .matrix-rain {
+    position: absolute;
+    color: hsl(var(--primary));
+    font-family: var(--font-neural);
+    font-size: 14px;
+    animation: matrix-fall linear infinite;
+    pointer-events: none;
+    opacity: 0.7;
+  }
+  
+  .neural-button {
+    position: relative;
+    background: hsl(var(--secondary));
+    border: 1px solid hsl(var(--primary) / 0.3);
+    color: hsl(var(--primary));
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .neural-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.2), transparent);
+    transition: left 0.5s ease;
+  }
+  
+  .neural-button:hover::before {
+    left: 100%;
+  }
+  
+  .neural-button:hover {
+    border-color: hsl(var(--primary));
+    box-shadow: var(--glow-cyan);
+    transform: translateY(-2px);
+  }
+  
+  .data-particle {
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background: var(--gradient-data-flow);
+    animation: data-stream linear infinite;
+    opacity: 0.6;
+  }
+}
